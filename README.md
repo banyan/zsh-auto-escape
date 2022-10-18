@@ -12,11 +12,19 @@ The motivation is that the [remix framework](https://remix.run/docs/en/v1/api/co
 
 ## Installation
 
+### Manually
+
 Download zsh-dollar-sign-quoter.zsh and source it from your ~/.zshrc file. Then make sure that you add some prefixes:
 
 ```zsh
 source ~/somewhere/zsh-dollar-sign-quoter.zsh
 ZSH_DOLLAR_SIGN_QUOTER_PREFIXES=('vim' 'code')
+```
+
+### [Zinit](https://github.com/zdharma-continuum/zinit)
+
+```
+zinit light banyan/zsh-dollar-sign-quoter
 ```
 
 ## License
