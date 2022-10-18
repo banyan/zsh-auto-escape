@@ -14,7 +14,7 @@ The motivation is that the [remix framework](https://remix.run/docs/en/v1/api/co
 
 ### Manually
 
-Download zsh-dollar-sign-quoter.zsh and source it from your ~/.zshrc file. Then make sure that you add some prefixes:
+Download `zsh-dollar-sign-quoter.zsh` and source it from your `~/.zshrc file`. Then make sure that you add some prefixes:
 
 ```zsh
 source ~/somewhere/zsh-dollar-sign-quoter.zsh
