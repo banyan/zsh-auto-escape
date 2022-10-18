@@ -1,0 +1,1 @@
+# zsh-dollar-sign-quoter
