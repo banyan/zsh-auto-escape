@@ -5,7 +5,7 @@ function autoquote() {
         for str ($prefix) {
             if [[ ${(M)BUFFER#$str} ]] {
                 for F in ${(ps: :)BUFFER}; do
-                    if [[ $F =~ "\\$" ]] && ! [[ $F =~ "'" ]]; then
+                    if [[ $F =~ "\\$" ]] && ! [[ $F =~ "\\\\" ]] && ! [[ $F =~ "'" ]]; then
                         BUFFER=${BUFFER/${F}/${(qq)${F}}}
                     fi
                 done
