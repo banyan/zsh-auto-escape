@@ -3,6 +3,8 @@
 zsh-auto-escape is a zle widget ("zsh plugin") that will automatically escapes around the argument of certain commands just like when we hit the tab key in command line shells.
 The motivation is that the [remix framework](https://remix.run/docs/en/v1/api/conventions#route-file-conventions) recommends using file names with dollar signs, which was inconvenient, so I created it.
 
+![Demo](assets/demo.gif)
+
 ## How it works
 
 #### If the argument of the configured command contains a special charcter, it's converted to the argument with being escaped just before execution.
