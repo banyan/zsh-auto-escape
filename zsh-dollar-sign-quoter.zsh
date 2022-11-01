@@ -11,13 +11,9 @@ function autoquote() {
 
         if [[ $command == "$prefix " ]]; then
             for word in ${(ps: :)args}; do
-                # 1. if the word contains dollar sign
-                # 2. and not escaped like \$
-                # 3. and does not contain single quote
-                # 4. and does not contain double quote
-                if [[ $word =~ "\\$" ]] && ! [[ $word =~ "\\\\" ]] && ! [[ $word =~ "'" ]] && ! [[ $word =~ "\"" ]]; then
-                    # Enclose in single quote
-                    BUFFER=${BUFFER/${word}/${(qq)${word}}}
+                if ! [[ $word =~ "\\\\" ]]; then # if the word is already escaped, leave as it is.
+                    escaped=$(printf '%q' "$word")
+                    BUFFER=${BUFFER/${word}/${escaped}}
                 fi
             done
         fi
