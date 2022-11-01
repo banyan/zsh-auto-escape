@@ -1,6 +1,6 @@
 declare -ga ZSH_DOLLAR_SIGN_QUOTER_PREFIXES
 
-function autoquote() {
+function autoescape() {
     local prefix_length command args
 
     for prefix in $ZSH_DOLLAR_SIGN_QUOTER_PREFIXES; do
@@ -11,7 +11,7 @@ function autoquote() {
 
         if [[ $command == "$prefix " ]]; then
             for word in ${(ps: :)args}; do
-                if ! [[ $word =~ "\\\\" ]]; then # if the word is already escaped, leave as it is.
+                if ! [[ $word =~ "\\\\" ]]; then # Assuming human never types backslash and treats it's already escaped and does nothing.
                     escaped=$(printf '%q' "$word")
                     BUFFER=${BUFFER/${word}/${escaped}}
                 fi
@@ -21,4 +21,4 @@ function autoquote() {
     zle .accept-line
 }
 
-zle -N accept-line autoquote
+zle -N accept-line autoescape
