@@ -1,9 +1,9 @@
-declare -ga ZSH_DOLLAR_SIGN_QUOTER_PREFIXES
+declare -ga ZSH_AUTO_ESCAPE_PREFIXES
 
 function autoescape() {
     local prefix_length command args
 
-    for prefix in $ZSH_DOLLAR_SIGN_QUOTER_PREFIXES; do
+    for prefix in $ZSH_AUTO_ESCAPE_PREFIXES; do
         # Assume that a prefix is always followed by a space
         prefix_length=$(expr ${#prefix} + 1)
         command=${BUFFER:0:$prefix_length}
